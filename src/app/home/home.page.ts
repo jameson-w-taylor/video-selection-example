@@ -16,6 +16,8 @@ export class HomePage {
         mediaType: this.camera.MediaType.VIDEO,
         sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
       });
+      // You should see something like this on iOS:
+      // file:///var/mobile/Containers/Data/Application/{SOME_UNIQUE_IDENTIFIER_HERE}/tmp/{FILENAME_HERE}.{FILE_EXTENSION}
       console.log(result);
     } catch (e) {
       console.log(e);
