@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Camera } from '@awesome-cordova-plugins/camera/ngx';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,18 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private camera: Camera) {}
+
+  async selectVideo() {
+    try {
+      const result = await this.camera.getPicture({
+        mediaType: this.camera.MediaType.VIDEO,
+        sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
+      });
+      console.log(result);
+    } catch (e) {
+      console.log(e);
+    }
+  }
 
 }
