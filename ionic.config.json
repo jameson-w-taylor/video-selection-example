@@ -1,0 +1,7 @@
+{
+  "name": "video-selection",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
