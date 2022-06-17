@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Camera } from '@awesome-cordova-plugins/camera/ngx';
+import { Filesystem } from '@capacitor/filesystem';
 
 @Component({
   selector: 'app-home',
@@ -19,6 +20,11 @@ export class HomePage {
       // You should see something like this on iOS:
       // file:///var/mobile/Containers/Data/Application/{SOME_UNIQUE_IDENTIFIER_HERE}/tmp/{FILENAME_HERE}.{FILE_EXTENSION}
       console.log(result);
+      // Log out stat for file
+      const statResult = await Filesystem.stat({
+        path: result
+      });
+      console.log(statResult);
     } catch (e) {
       console.log(e);
     }
